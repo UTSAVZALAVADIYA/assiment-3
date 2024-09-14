@@ -1,36 +1,35 @@
 #include <stdio.h>
-void main()
-{
-    int ch;
-    float a, b, c, s, area;
-    printf("1. Area of Triangle\n");
-    printf("2. Area of Rectangle\n");
-    printf("3. Area of Circle\n");
+
+int main() {
+    int choice;
+    float base, height, length, breadth, radius, pi = 3.14159;
+
+    printf("Choose the shape whose area you want to calculate:\n");
+    printf("1. Triangle\n");
+    printf("2. Rectangle\n");
+    printf("3. Circle\n");
     printf("Enter your choice: ");
-    scanf(" %d ", &ch);
-    switch (ch)
-    {
-    case 1:
-        printf("Enter the sides of triangle: ");
-        scanf(" %f%f%f ", &a, &b, &c);
-        s = (a + b + c) / 2;
-        area = sqrt(s * (s - a) * (s - b) * (s - c));
-        printf("Area of triangle = %.3f\n", area);
-        break;
-    case 2:
-        printf("Enter the length and breadth of rectangle: ");
-        scanf(" %f%f ", &a, &b);
-        area = a * b;
-        printf("Area of rectangle = %.3f\n", area);
-        break;
-    case 3:
-        printf("Enter the radius of circle: ");
-        scanf(" %f ", &a);
-        area = 3.14 * a * a;
-        printf("Area of circle = %.3f\n", area);
-        break;
-    default:
-        printf("Invalid choice\n");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Enter the base and height of the triangle: ");
+            scanf("%f %f", &base, &height);
+            printf("Area of the triangle: %.2f\n", 0.5 * base * height);
+            break;
+        case 2:
+            printf("Enter the length and breadth of the rectangle: ");
+            scanf("%f %f", &length, &breadth);
+            printf("Area of the rectangle: %.2f\n", length * breadth);
+            break;
+        case 3:
+            printf("Enter the radius of the circle: ");
+            scanf("%f", &radius);
+            printf("Area of the circle: %.2f\n", pi * radius * radius);
+            break;
+        default:
+            printf("Invalid choice!\n");
     }
 
+    return 0;
 }
